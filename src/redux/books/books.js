@@ -14,13 +14,13 @@ export const removeBook = (payload) => ({
 });
 
 const bookReducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  switch (type) {
+  
+  switch (action.type) {
     case ADD_BOOK:
-      return [...state, payload];
+      return [...state, action.payload];
 
     case REMOVE_BOOK:
-      return state.filter[(book) => book.id !== payload];
+      return state.filter[(book) => book.id !== action.payload];
       default:
         return state;  
   }
