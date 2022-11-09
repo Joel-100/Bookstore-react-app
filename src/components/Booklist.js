@@ -16,7 +16,7 @@ const Booklist = (props) => {
 Booklist.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.exact({
-      id: PropTypes.number,
+      id: PropTypes.string,
       title: PropTypes.string,
       author: PropTypes.string,
     }),
