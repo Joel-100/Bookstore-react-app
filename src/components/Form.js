@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addbook } from '../redux/books/books';
+import { addABook } from '../redux/books/books';
 
 const Form = () => {
   const [title, setTitle] = useState('');
@@ -9,11 +9,12 @@ const Form = () => {
   const dispatch = useDispatch();
   const addBook = () => {
     const book = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       author,
+      category: 'action',
     };
-    dispatch(addbook(book));
+    dispatch(addABook(book));
   };
 
   return (

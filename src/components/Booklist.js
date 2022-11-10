@@ -9,8 +9,8 @@ const Booklist = (props) => {
     <ul className="booklist flex">
       {books.map((book) => (
         <Book
-          key={book.id}
-          id={book.id}
+          key={book.item_id}
+          item_id={book.item_id}
           title={book.title}
           author={book.author}
         />
@@ -22,9 +22,10 @@ const Booklist = (props) => {
 Booklist.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.exact({
-      id: PropTypes.string,
+      item_id: PropTypes.string,
       title: PropTypes.string,
       author: PropTypes.string,
+      category: PropTypes.string,
     }),
   ).isRequired,
 };
