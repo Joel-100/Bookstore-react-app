@@ -19,4 +19,9 @@ const addBook = async (book) => {
   return response.data;
 };
 
-export { fetchBooks, addBook };
+const deleteBook = async (id) => {
+  const response = await axios.delete(`${URL}/${id}`);
+  return response;
+};
+
+export { fetchBooks, addBook, deleteBook };

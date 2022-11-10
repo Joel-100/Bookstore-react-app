@@ -1,25 +1,32 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { deleteABook } from '../redux/books/books';
 
-const Book = (props) => {
-  const { title, author } = props;
+const Book = ({ book }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(deleteABook(book.item_id));
+  };
 
   return (
     <div className="book-wrapper flex">
       <ul className="list books">
-        <li>{title}</li>
+        <li>{book.title}</li>
         <li>Written By</li>
-        <li>{author}</li>
+        <li>{book.author}</li>
       </ul>
-      <button className="remove-button" type="button">Remove</button>
+      <button className="remove-button" type="button" onClick={handleDelete}>
+        Remove
+      </button>
     </div>
-
   );
 };
 
-Book.propTypes = ({
+Book.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
-}).isRequired;
+}.isRequired;
 
 export default Book;

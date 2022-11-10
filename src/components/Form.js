@@ -15,6 +15,8 @@ const Form = () => {
       category: 'action',
     };
     dispatch(addABook(book));
+    setTitle('');
+    setAuthor('');
   };
 
   return (

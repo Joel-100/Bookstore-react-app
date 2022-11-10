@@ -2,22 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
 
-const Booklist = (props) => {
-  const { books } = props;
-
-  return (
-    <ul className="booklist flex">
-      {books.map((book) => (
-        <Book
-          key={book.item_id}
-          item_id={book.item_id}
-          title={book.title}
-          author={book.author}
-        />
-      ))}
-    </ul>
-  );
-};
+const Booklist = ({ books }) => (
+  <ul className="booklist flex">
+    {books?.map((book) => (
+      <Book
+        key={book.item_id}
+        book={book}
+      />
+    ))}
+  </ul>
+);
 
 Booklist.propTypes = {
   books: PropTypes.arrayOf(
