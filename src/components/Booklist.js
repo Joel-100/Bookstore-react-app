@@ -7,16 +7,22 @@ const Booklist = (props) => {
 
   return (
     <ul className="booklist flex">
-      {books.map((book) => <Book key={book.id} title={book.title} author={book.author} />)}
+      {books.map((book) => (
+        <Book
+          key={book.id}
+          id={book.id}
+          title={book.title}
+          author={book.author}
+        />
+      ))}
     </ul>
-
   );
 };
 
 Booklist.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.exact({
-      id: PropTypes.number,
+      id: PropTypes.string,
       title: PropTypes.string,
       author: PropTypes.string,
     }),
