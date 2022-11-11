@@ -6,7 +6,7 @@ This is an app that displays all books and allows you to add and delete a book
 - React
 - Redux.
 
-## Authors
+## Author
 
 👤 **Joel Kugonza**
 
