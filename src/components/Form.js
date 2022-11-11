@@ -12,7 +12,7 @@ const Form = () => {
       item_id: uuidv4(),
       title,
       author,
-      category: 'action',
+      category: 'Action',
     };
     dispatch(addABook(book));
     setTitle('');
@@ -20,13 +20,14 @@ const Form = () => {
   };
 
   return (
-    <>
+    <div className="form-wrapper">
+      <h2 className="form-header">Add Book</h2>
       <form className="form">
         <input className="book-title-input" type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Book title" />
         <input className="book-title-input" type="text" value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Author" />
-        <button type="button" onClick={addBook}>Add Book</button>
+        <button className="add-btn" type="button" onClick={addBook}>Add Book</button>
       </form>
-    </>
+    </div>
   );
 };
 
